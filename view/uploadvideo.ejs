@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,minimum-scale=1,maximum-scale=1,initial-scale=1,user-scalable=no" />
+    <title>上传视频</title>
+    <link rel="stylesheet" href="/wechat/css/style.css" type="text/css">
+    <script src="https://cdn.bootcss.com/jquery/3.1.0/jquery.min.js"></script>
+    <script src="/wechat/js/layer_mobile/layer.js"></script>
+    <script>
+        var nickname = '<%= nickname %>';
+        var headimgurl = '<%= headimgurl %>';
+        var openid = '<%= openid %>';
+        var coverPath = '<%= coverPath %>';
+        var pictureUrl,
+            oldURL;
+    </script>
+</head>
+
+<body>
+    <div class="progress-wrapper">
+        <div class="progress-box">
+            <p class="progress-inner-bar"></p>
+        </div>
+    </div>
+    <div class="blessing-wrapper" id="big">
+        <div class="frame-bottom" id="video-wrapper">
+            <div class="flex-wrapper" id="video-wrapper"></div>
+        </div>
+        <div class="video-frame">
+        </div>
+        <div class="frame-top">
+            <div class="user-info">
+                <div class="avatar">
+                    <img src="<%= headimgurl %>" />
+                </div>
+                <div class="nick-name">
+                    <%= nickname %>
+                </div>
+            </div>
+            <!-- <div class="start-btn" id="J_UploadPictureBtn"></div> -->
+            <div class="start-btn">
+                <input type="file" class="start" accept="video/*" capture="camera">
+            </div>
+            <div class="restart-btn">
+                <input type="file" class="start" accept="video/*" capture="camera">
+            </div>
+        </div>
+        <div class="upload"></div>
+        <div class="blessing-wall">
+            <a href="/blessingWall"></a>
+        </div>
+    </div>
+    <audio autoplay="autoplay" loop="loop" id="bg-music" src="http://cdn1.u.h5mugeda.com/campaigns/5a58715b347a1955261a0ba4/20180113051622/5a59ce2092b579614b04a028/5a660118347a196a2e03e1f1.mp3">
+    </audio>
+    <script src="/wechat/js/setFontSize.js"></script>
+    <script src="/wechat/js/index.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            function audioAutoPlay() {
+                var audio = document.getElementById('bg-music');
+                audio.play();
+                document.addEventListener("WeixinJSBridgeReady", function() {
+                    audio.play();
+                }, false);
+            }
+            audioAutoPlay();
+        });
+    </script>
+</body>
+
+</html>
