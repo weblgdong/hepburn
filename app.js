@@ -42,9 +42,9 @@ app.use(static(
     path.join(__dirname, staticPath)
 ))
 
-// app.listen(3000, () => {
-//   console.log('[demo] upload-pic-async is starting at port 3000')
-// })
+app.listen(80, () => {
+    console.log('[demo] upload-pic-async is starting at port 3000')
+})
 
 const options = {
     // key: fs.readFileSync('ssl/214297685440275.key'),
@@ -52,4 +52,4 @@ const options = {
 };
 
 //http.createServer(app.callback()).listen(80);
-https.createServer(options, app.callback()).listen(443);
+// https.createServer(options, app.callback()).listen(443);
