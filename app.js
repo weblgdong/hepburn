@@ -47,8 +47,8 @@ app.use(static(
 // })
 
 const options = {
-    key: fs.readFileSync('ssl/214297685440275.key'),
-    cert: fs.readFileSync('ssl/214297685440275.pem')
+    // key: fs.readFileSync('ssl/214297685440275.key'),
+    // cert: fs.readFileSync('ssl/214297685440275.pem')
 };
 
 //http.createServer(app.callback()).listen(80);
