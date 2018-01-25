@@ -43,7 +43,7 @@ app.use(static(
 ))
 
 app.listen(80, () => {
-    console.log('[demo] upload-pic-async is starting at port 3000')
+    // console.log('[demo] upload-pic-async is starting at port 3000')
 })
 
 const options = {
