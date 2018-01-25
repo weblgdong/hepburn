@@ -22,7 +22,7 @@ const getAuthority = require('./getAuthority')
 const wechatRedirect = require('./wechat_redirect')
 
 router.use(checkLogin);
-router.use('/',wechat.routes(), wechat.allowedMethods())
+// router.use('/',wechat.routes(), wechat.allowedMethods())
 // router.use('/home', home.routes(), home.allowedMethods())
 router.use('/uploadvideo', upLoadVido.routes(), upLoadVido.allowedMethods())
 router.use('/blessingWall', blessingWall.routes(), blessingWall.allowedMethods())

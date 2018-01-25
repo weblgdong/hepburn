@@ -1,4 +1,4 @@
-var ffmpeg = require('fluent-ffmpeg');
+const ffmpeg = require('fluent-ffmpeg');
 const crypto = require('crypto');
 const path = require('path');
 const secret = 'abcdefg';
@@ -8,6 +8,7 @@ function createCover(ctx, videoName) {
         .update(videoName)
         .digest('hex');
     let extname = path.extname(videoName);
+    console.log(videoName)
     return new Promise((resolve, reject) => {
         if (extname.toLocaleLowerCase() === '.mp4') {
             ffmpeg(videoName)

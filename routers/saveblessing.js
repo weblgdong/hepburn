@@ -11,5 +11,7 @@ module.exports = router.post('*', async(ctx) => {
     if (existts.length) {
         type = 'updata';
     }
-    ctx.body = await saveBlessing(postData, type);
+    console.log(type)
+    let data = await saveBlessing(postData, type);
+    ctx.body = data;
 });
