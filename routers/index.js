@@ -14,6 +14,7 @@ const saveblessing = require('./saveblessing')
 const allblessing = require('./allBlessing')
 const wechat = require('./wechat')
 const Laud = require('./laud');
+const play = require('./play');
 const removeBlessing = require('./removeBlessing');
 //用户授权 ------------
 const getAuthority = require('./getAuthority')
@@ -28,6 +29,7 @@ router.use('/uploadvideo', upLoadVido.routes(), upLoadVido.allowedMethods())
 router.use('/blessingWall', blessingWall.routes(), blessingWall.allowedMethods())
 router.use('/laud', Laud.routes(), Laud.allowedMethods())
 router.use('/removeBlessing', removeBlessing.routes(), removeBlessing.allowedMethods())
+router.use('/play', play.routes(), play.allowedMethods())
     //-------------
 router.use('/authority', getAuthority.routes(), getAuthority.allowedMethods())
 
