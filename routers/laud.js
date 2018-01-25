@@ -12,7 +12,7 @@ module.exports = router.post('*', async(ctx) => {
     let findUer = await findUerLaud(useOpenId);
     let result = {
         errNo: false,
-        content: '没个ID只能点赞一次'
+        content: '每个ID只能点赞一次'
     }
     if (findUer.length) {
         ctx.body = result;
