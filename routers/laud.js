@@ -16,7 +16,10 @@ module.exports = router.post('*', async(ctx) => {
     }
     if (findUer.length) {
         ctx.body = result;
-    } else {
+    } else if(!useOpenId){
+    	result.content='服务器繁忙请稍后重试!'
+        ctx.body = result;
+    }else {
         let data = await toLaud(useOpenId);
         let praise = await addLaud(postData.id);
         result.errNo = true
