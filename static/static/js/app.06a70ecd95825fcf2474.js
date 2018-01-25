@@ -151,7 +151,7 @@ webpackJsonp([1], {
             return D.a.post("/allblessing", { page: t }).then(function(t) {
                 for (var e = t.data, i = 0; i < e.length; i++) {
                     var s = e[i];
-                    s.pictureUrl = "http://lgdong.cn:8000" + s.pictureUrl
+                    s.pictureUrl = "/play?id=" + s._id
                 }
                 return a.a.resolve(e)
             })

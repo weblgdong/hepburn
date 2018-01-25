@@ -1,15 +1,30 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,minimum-scale=1,maximum-scale=1,initial-scale=1,user-scalable=no">
-  <title>祝福视频</title>
-  <link href="/static/css/app.e155ac314d56e94cb6c663bd4bdb17a1.css" rel="stylesheet">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,minimum-scale=1,maximum-scale=1,initial-scale=1,user-scalable=no">
+    <title>祝福视频</title>
+    <link href="/static/css/app.e155ac314d56e94cb6c663bd4bdb17a1.css" rel="stylesheet">
 </head>
+
 <body>
-<div id="app"></div>
+    <div id="app"></div>
+    <audio autoplay="autoplay" style="display:none" loop="loop" id="bg-music" src="http://cdn1.u.h5mugeda.com/campaigns/5a58715b347a1955261a0ba4/20180113051622/5a59ce2092b579614b04a028/5a660118347a196a2e03e1f1.mp3">
 <script type="text/javascript" src="/static/js/manifest.9fa2ff33ee3aef90d7e8.js"></script>
 <script type="text/javascript" src="/static/js/vendor.0659f458c56f972e67eb.js"></script>
 <script type="text/javascript" src="/static/js/app.06a70ecd95825fcf2474.js"></script>
+<script>
+        document.addEventListener('DOMContentLoaded', function() {
+            function audioAutoPlay() {
+                var audio = document.getElementById('bg-music');
+                audio.play();
+                document.addEventListener("WeixinJSBridgeReady", function() {
+                    audio.play();
+                }, false);
+            }
+            audioAutoPlay();
+        });
+    </script>
 </body>
 </html>

@@ -4,7 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,minimum-scale=1,maximum-scale=1,initial-scale=1,user-scalable=no" />
-    <title>上传视频</title>
+    <title>
+        <%= nickName %>
+    </title>
     <link rel="stylesheet" href="/wechat/css/style.css" type="text/css">
     <script src="https://cdn.bootcss.com/jquery/3.1.0/jquery.min.js"></script>
     <script>
@@ -16,12 +18,13 @@
 <body>
     <div class="blessing-wrapper" id="big">
         <div class="frame-bottom" id="video-wrapper">
-            <video width="100%" height="auto" poster="<%= coverPath %>" autoplay="autoplay">
+            <video width="100%" height="auto" id="iVideo" poster="<%= coverPath %>" autoplay="autoplay">
             <source src="http://lgdong.cn:8000<%= pictureUrl %>" type="video/mp4">
             </video>
         </div>
         <div class="video-frame">
-            
+        </div>
+        <div class="blessing-wall blessing-play">
         </div>
     </div>
     <audio autoplay="autoplay" loop="loop" id="bg-music" src="http://cdn1.u.h5mugeda.com/campaigns/5a58715b347a1955261a0ba4/20180113051622/5a59ce2092b579614b04a028/5a660118347a196a2e03e1f1.mp3">
@@ -31,13 +34,17 @@
         document.addEventListener('DOMContentLoaded', function() {
             function audioAutoPlay() {
                 var audio = document.getElementById('bg-music');
+                var iVideo = document.getElementById('iVideo');
+                iVideo.play();
                 audio.play();
                 document.addEventListener("WeixinJSBridgeReady", function() {
+                    iVideo.play();
                     audio.play();
                 }, false);
             }
             audioAutoPlay();
         });
+
         function isPhoneX() {
             return /iphone/gi.test(navigator.userAgent) && (screen.height === 812 && screen.width === 375)
         }

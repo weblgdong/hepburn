@@ -197,7 +197,12 @@ body {
     background: url(../images/blessing_wall.png) no-repeat center top;
     background-size: 2.3rem 1.97rem;
 }
-
+.blessing-wrapper .blessing-play{
+    margin-top:0.8rem;
+    height: 1.28rem;
+    background-image: url(../images/blessing_wall@230.png);
+    background-size: 2.3rem 1.28rem;
+}
 .blessing-wrapper .blessing-wall a {
     display: block;
     width: 100%;
