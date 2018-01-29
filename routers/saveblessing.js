@@ -8,11 +8,11 @@ module.exports = router.post('*', async(ctx) => {
     let openId = postData.openid;
     let type = 'create';
     let existts = await existsblessing({ 'openid': openId });
-    console.log(existts)
+    //console.log(existts)
     if (existts.length) {
         type = 'updata';
     }
-    console.log(type)
+    //console.log(type)
     let data = await saveBlessing(postData, type);
     ctx.body = data;
 });

@@ -46,7 +46,7 @@ function uploadFile(ctx, options) {
     let filePath = path.join(options.path, fileType)
     let mkdirResult = mkdirsSync(filePath)
     return new Promise((resolve, reject) => {
-        console.log('文件上传中...')
+      //  console.log('文件上传中...')
         let result = {
             success: false,
             message: ''
@@ -57,7 +57,7 @@ function uploadFile(ctx, options) {
             let fileName = Math.random().toString(16).substr(2) + '.' + getSuffixName(filename)
             let _uploadFilePath = path.join(filePath, fileName)
             let saveTo = path.join(_uploadFilePath)
-            console.log(saveTo);
+           // console.log(saveTo);
             // 文件保存到制定路径
             file.pipe(fs.createWriteStream(saveTo))
                 // 文件写入事件结束

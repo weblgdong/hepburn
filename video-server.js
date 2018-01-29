@@ -33,7 +33,7 @@ var server = http.createServer(function(request, response){
                     if (request.headers["range"]) {
                         console.log(request.headers["range"])
                         var range = utils.parseRange(request.headers["range"], stats.size);
-                        console.log(range)
+                       // console.log(range)
                         if (range) {
                             response.setHeader("Content-Range", "bytes " + range.start + "-" + range.end + "/" + stats.size);
                             response.setHeader("Content-Length", (range.end - range.start + 1));
@@ -75,4 +75,3 @@ var server = http.createServer(function(request, response){
     };
 })
 server.listen(port)
-
