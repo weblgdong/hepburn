@@ -12,6 +12,7 @@ const getUserInfo = require('./getUserInfo')
 
 const saveblessing = require('./saveblessing')
 const allblessing = require('./allBlessing')
+const allData = require('./adminAllData')
 const wechat = require('./wechat')
 const Laud = require('./laud');
 const play = require('./play');
@@ -43,5 +44,6 @@ router.use('/wechat_redirect', wechatRedirect.routes(), wechatRedirect.allowedMe
 router.use('/upload', upload.routes(), upload.allowedMethods())
 router.use('/save', saveblessing.routes(), saveblessing.allowedMethods())
 router.use('/allblessing', allblessing.routes(), allblessing.allowedMethods())
+router.use('/allData', allData.routes(), allData.allowedMethods())
 
 module.exports = router
