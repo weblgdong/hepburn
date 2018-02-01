@@ -14,7 +14,7 @@ const blessingSchema = new mongoose.Schema({
     },
     time: {
         type: Number,
-        default: Date.now()
+        default: Date.now
     }
 });
 
