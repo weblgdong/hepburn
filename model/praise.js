@@ -2,8 +2,8 @@ const mongoose = require('mongoose');
 const praiseSchema = new mongoose.Schema({
     openid: String,
     time: {
-        type: String,
-        default: new Date().getFullYear() + '-' + new Date().getMonth() + 1 + '-' + new Date().getDate()
+        type: Number,
+        default: Date.now
     }
 });
 
