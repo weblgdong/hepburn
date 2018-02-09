@@ -1,6 +1,5 @@
 const getUerInfo = require('../util/getUerInfo');
 const findUserBlessing = require('../controllers/findUserBlessing');
-const getUerInfo = require('../util/getUerInfo');
 
 module.exports = async(ctx) => {
     let { access_token, openid } = ctx.session;
