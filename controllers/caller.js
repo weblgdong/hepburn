@@ -6,7 +6,6 @@ async function createCaller(json){
             if(err){
                 reject('err')
             }else{
-                console.log('data--',json);
                 resolve(data);
             }
         });
