@@ -1,5 +1,6 @@
 const getUerInfo = require('../util/getUerInfo');
 const findUserBlessing = require('../controllers/findUserBlessing');
+const updateUserInfo = require('../controllers/updateUserInfo');
 
 module.exports = async(ctx) => {
     let { access_token, openid } = ctx.session;
@@ -7,14 +8,20 @@ module.exports = async(ctx) => {
     let res = await findUserBlessing(openid);
     data = JSON.parse(data);
     let { nickname, headimgurl } = data;
-    console.log(data);
+
     let json = {
         nickname,
         headimgurl,
         openid,
         coverPath: ''
     }
+    console.log(data);
     if (res) {
+        if(!res.nickName || !res.avatarUrl){
+            if(nickname){
+                updateUserInfo(openid,{nickName:nickname,headimgurl:avatarUrl});
+            }
+        }
         json.coverPath = res.coverPath
     }
     await ctx.render('uploadvideo', json);
