@@ -1,13 +1,13 @@
 const getUerInfo = require('../util/getUerInfo');
 const getBlessing = require('./existsblessing');
 const findUserBlessing = require('../controllers/findUserBlessing');
-const createCaller = require('../controllers/caller');
+// const createCaller = require('../controllers/caller');
 
 module.exports = async(ctx) => {
     const title = '上传视频'
     let { access_token, openid } = ctx.session;
     let data = await getUerInfo(access_token, openid);
-    await createCaller(data);
+    // await createCaller(data);
     let list = await getBlessing({});
     data = JSON.parse(data);
     let { nickname, headimgurl } = data;
