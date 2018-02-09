@@ -18,8 +18,8 @@ module.exports = async(ctx) => {
     console.log(data);
     if (res) {
         if(!res.nickName || !res.avatarUrl){
-            if(nickname){
-                updateUserInfo(openid,{nickName:nickname,headimgurl:avatarUrl});
+            if(headimgurl){
+                updateUserInfo(openid,{nickName:nickname,avatarUrl:headimgurl});
             }
         }
         json.coverPath = res.coverPath
