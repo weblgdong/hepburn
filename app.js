@@ -23,7 +23,7 @@ db.once('open', function(callback) {
 });
 app.use(session({
     // cookie: { maxAge: 24 * 100000 * 36 }, // 过期时间（毫秒） 
-    cookie: { maxAge: 60000 },
+    cookie: { maxAge: 172800000 },
     store: new MongoStore()
 }))
 

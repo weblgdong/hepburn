@@ -1,5 +1,6 @@
 const getUerInfo = require('../util/getUerInfo');
 const findUserBlessing = require('../controllers/findUserBlessing');
+const getUerInfo = require('../util/getUerInfo');
 
 module.exports = async(ctx) => {
     let { access_token, openid } = ctx.session;
@@ -7,6 +8,7 @@ module.exports = async(ctx) => {
     let res = await findUserBlessing(openid);
     data = JSON.parse(data);
     let { nickname, headimgurl } = data;
+    console.log(data);
     let json = {
         nickname,
         headimgurl,
