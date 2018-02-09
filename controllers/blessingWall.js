@@ -16,7 +16,6 @@ module.exports = async(ctx) => {
                 updateUserInfo(openid,{nickName:nickname,avatarUrl:headimgurl});
             }
         }
-        json.coverPath = res.coverPath
     }
     await ctx.render('blessingWall', {
         nickname,
